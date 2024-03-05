@@ -68,7 +68,7 @@ export const login = async (req, res) => {
         expires: token.expiresIn,
       })
       .status(200)
-      .json({ success:true, message:"Succesfully login", Date:{...rest} });
+      .json({token, role, success:true, message:"Succesfully login", date:{...rest} });
   } catch (error) {
     res.status(500).json({ susccess: false, message: "Failed to login" });
   }
